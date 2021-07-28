@@ -1,3 +1,24 @@
 <h1 class="title">專案列表</h1>
 
 <%= link_to '新增專案', new_project_path, class: 'button is-light' %>
+
+<table class="table is-fullwidth">
+
+  <tr>
+    <td>名稱</td>
+    <td>說明</td>
+    <td></td>
+  </tr>
+
+
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= link_to project.name, project_path(project) %></td>
+      <td><%= project.description %></td>
+      <td>
+        <%= link_to '編輯', edit_project_path(project) %>
+        <%= link_to '刪除', project_path(project), method: 'delete', data: {confirm: '確定刪除？！'} %>
+      </td>
+    </tr>
+  <% end %>
+</table>

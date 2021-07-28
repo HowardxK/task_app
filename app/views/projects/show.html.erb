@@ -1,0 +1,10 @@
+<% if @project %>
+  <h1 class="title"><%= @project.name %></h1>
+  <ul>
+    <li>內容：<%= @project.description %></li>
+    <li></li>
+    <li></li>
+  </ul>
+<% else %>
+  <h1 class="title">找不到專案</h1>
+<% end %>
