@@ -1,0 +1,20 @@
+<%= form_for([@task.project, @task]) do |form| %>
+
+  <div class="field">
+    <%= form.label :name, class: 'label' %>
+    <%= form.text_field :name, class: 'input is-medium' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, class: 'label' %>
+    <%= form.text_area :description, class: 'textarea' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status, class: 'label' %>
+    <%= form.text_field :status, class: 'input is-medium' %>
+  </div>
+
+
+  <%= form.submit class: 'button is-dark is-medium' %>
+<% end %>

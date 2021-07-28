@@ -1,3 +1,28 @@
 <h1 class="title">任務列表</h1>
 
+<table class="table is-fullwidth">
+  <tr>
+    <td>名稱</td>
+    <td>說明</td>
+    <td>狀態</td>
+    <td>專案</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.name %></td>
+      <td><%= task.description %></td>
+      <td><%= task.status %></td>
+      <td><%= task.project.name %></td>
+      <td><%= link_to '查看', project_task_path(task.project, task) %></td>
+      <td><%= link_to '編輯', edit_project_task_path(task.project, task) %></td>
+      <td><%= link_to '刪除', project_task_path(task.project, task), method: 'delete', data: {confirm: '確定刪除？'} %></td>
+    </tr>
+
+  <% end %>
+</table>
+
 <%= link_to '新增任務', new_project_task_path(params[:project_id]), class: 'button is-light' %>

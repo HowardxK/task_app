@@ -1,3 +1,7 @@
 <h1 class="title">新增任務</h1>
 
 <%= render 'form' %>
+
+<br>
+
+<%= link_to '返回', project_tasks_path(@task.project), class: 'button is-light' %>
