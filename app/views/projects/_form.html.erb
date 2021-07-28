@@ -1,0 +1,14 @@
+<%= form_with(model: project) do |form| %>
+  <div class="field">
+    <%= form.label :name, '名稱', class: 'label' %>
+    <%= form.text_field :name, class: 'input is-medium' %>
+  </div>
+  <div class="field">
+    <%= form.label :description, '說明', class: 'label' %>
+    <%= form.text_area :description, class: 'textarea' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit '建立專案', class: 'button is-dark is-medium' %>
+  </div>
+<% end %>
