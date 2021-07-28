@@ -8,6 +8,11 @@ Bundler.require(*Rails.groups)
 
 module TaskApp
   class Application < Rails::Application
+    config.generators do |g|
+      g.assets false
+      g.helper false
+      g.test_framework  :test_unit, fixture: false
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
